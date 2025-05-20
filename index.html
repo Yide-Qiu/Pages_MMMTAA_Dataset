@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMM-TTA: Maritime Multi-Object Tracking Benchmark</title>
+    <style>
+        body {font-family: Arial, sans-serif; line-height: 1.6; max-width: 1200px; margin: 0 auto; padding: 20px;}
+        .section {margin-bottom: 40px;}
+        h2 {color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;}
+        table {border-collapse: collapse; width: 100%; margin: 20px 0;}
+        th, td {border: 1px solid #ddd; padding: 12px; text-align: left;}
+        th {background-color: #f8f9fa;}
+        .dataset-stats {background-color: #f8f9fa; padding: 15px; border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MMM-TTA: Multi-Probe Benchmark for Maritime Multi-Object Tracking and Trajectory Association</h1>
+    </header>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>The MMM-TTA benchmark is the first comprehensive dataset suite for maritime multi-object tracking under cross-sensor observation biases. It consists of:</p>
+        <ul>
+            <li>13.2M+ detector records</li>
+            <li>26.8K+ maritime moving targets</li>
+            <li>8 distinct subsets combining simulated and real-world data</li>
+            <li>Multi-sensor observations (radar + electronic reconnaissance)</li>
+            <li>Temporal-asymmetric shift features</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Key Features</h2>
+        <div class="dataset-stats">
+            <h3>Core Innovations:</h3>
+            <ul>
+                <li>MMM-TSS Simulation System with adaptive spatiotemporal registration</li>
+                <li>Multi-probe resampling technology</li>
+                <li>Heterogeneous sensor constellation modeling (32° and 76° inclinations)</li>
+                <li>Walker-Integrated orbital design (128 medium-altitude + 72 low-altitude probes)</li>
+                <li>GDOP-optimized satellite configuration</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+    <h2>Dataset Composition</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Subset</th>
+                <th>Source</th>
+                <th>#Ships</th>
+                <th>#Points</th>
+                <th>Density</th>
+                <th>Sensor Mix</th>
+                <th>Frame Rate</th>
+                <th>Resolution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MMTDS-sim</td>
+                <td>Simulated</td>
+                <td>300</td>
+                <td>536,290</td>
+                <td>1.87</td>
+                <td>Radar (10.94%) + ER (96.49%)</td>
+                <td>30</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>MMTDS-ais</td>
+                <td>Real AIS</td>
+                <td>7,970</td>
+                <td>10,542,238</td>
+                <td>2.10</td>
+                <td>Radar (12.71%) + ER (99.98%)</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>MMTDS-ootb</td>
+                <td>OOTB [1]</td>
+                <td>30</td>
+                <td>32,947</td>
+                <td>4.12</td>
+                <td>Radar (27.40%) + ER (97.51%)</td>
+                <td>0.1</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>MMTDS-otb100</td>
+                <td>OTB100 [2]</td>
+                <td>4</td>
+                <td>5,818</td>
+                <td>4.16</td>
+                <td>Radar (35.04%) + ER (100%)</td>
+                <td>0.1</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>MMTDS-satsot</td>
+                <td>SatSOT [3]</td>
+                <td>5</td>
+                <td>5,001</td>
+                <td>3.24</td>
+                <td>Radar (38.83%) + ER (100%)</td>
+                <td>0.1</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>MMTDS-satmtb</td>
+                <td>SAT_MTB [4]</td>
+                <td>511</td>
+                <td>273,743</td>
+                <td>3.36</td>
+                <td>Radar (29.40%) + ER (98.82%)</td>
+                <td>0.1</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>MMTDS-viso</td>
+                <td>VISO [5]</td>
+                <td>4</td>
+                <td>7,882</td>
+                <td>6.27</td>
+                <td>Radar (71.39%) + ER (100%)</td>
+                <td>0.1</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>MMTDS-mtad</td>
+                <td>MTAD [6]</td>
+                <td>17,967</td>
+                <td>1,648,541</td>
+                <td>1.62</td>
+                <td>Radar (2.67%) + ER (99.96%)</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="table-caption">
+        * ER = Electronic Reconnaissance<br>
+        Source References: [1] Wu et al. 2013 [2] Wu et al. 2015 [3] Zhao et al. 2022 [4] Li et al. 2023 [5] Yin et al. 2021 [6] Zhao et al. 2020
+    </p>
+    </div>
+
+    <div class="section">
+        <h2>Download Information</h2>
+        <h3>Dataset Access:</h3>
+        <ul>
+            <li><strong>Full Dataset Suite:</strong> <a href="https://pan.quark.cn/s/42ff735ebab5">Download</a></li>
+            <li><strong>Documentation:</strong> <a href="#documentation">Technical Report</a></li>
+            <li><strong>Sample Data:</strong> <a href="#samples">Example Trajectories</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Usage & License</h2>
+        <p>This dataset is released under <a href="#license">Academic Non-Commercial License</a>. Users must:</p>
+        <ul>
+            <li>Cite our work in publications</li>
+            <li>Not redistribute modified versions</li>
+            <li>Submit research intent for commercial use</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Citation</h2>
+        <pre>
+@article{anonymous2024mmmtta,
+    title={MMM-TTA: Multi-Probe Benchmark for Maritime Multi-Object Tracking and Trajectory Association},
+    author={Anonymous},
+    journal={Submitted to NeurIPS},
+    year={2024}
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Contact</h2>
+        <p>For dataset inquiries: <a href="mailto:anonymous.contact@protonmail.com">anonymous.contact@protonmail.com</a></p>
+    </div>
+</body>
+</html>
